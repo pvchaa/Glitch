@@ -1,0 +1,131 @@
+{
+  "name": "HealthLog",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "meal",
+        "sleep",
+        "stress",
+        "exercise",
+        "insulin",
+        "blood_sugar",
+        "menstrual"
+      ],
+      "description": "Type of health log entry"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this entry was logged"
+    },
+    "blood_sugar_level": {
+      "type": "number",
+      "description": "Blood sugar reading in mg/dL"
+    },
+    "insulin_units": {
+      "type": "number",
+      "description": "Units of insulin administered"
+    },
+    "insulin_type": {
+      "type": "string",
+      "enum": [
+        "rapid",
+        "long_acting",
+        "mixed"
+      ],
+      "description": "Type of insulin"
+    },
+    "meal_description": {
+      "type": "string",
+      "description": "Description of the meal"
+    },
+    "meal_carbs": {
+      "type": "number",
+      "description": "Estimated carbs in grams"
+    },
+    "meal_protein": {
+      "type": "number",
+      "description": "Estimated protein in grams"
+    },
+    "meal_fat": {
+      "type": "number",
+      "description": "Estimated fat in grams"
+    },
+    "meal_calories": {
+      "type": "number",
+      "description": "Estimated calories"
+    },
+    "meal_glycemic_index": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "Glycemic index of the meal"
+    },
+    "sleep_hours": {
+      "type": "number",
+      "description": "Hours of sleep"
+    },
+    "sleep_quality": {
+      "type": "string",
+      "enum": [
+        "poor",
+        "fair",
+        "good",
+        "excellent"
+      ],
+      "description": "Quality of sleep"
+    },
+    "stress_level": {
+      "type": "number",
+      "description": "Stress level from 1-10"
+    },
+    "exercise_type": {
+      "type": "string",
+      "description": "Type of exercise performed"
+    },
+    "exercise_duration": {
+      "type": "number",
+      "description": "Duration in minutes"
+    },
+    "exercise_intensity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ],
+      "description": "Exercise intensity level"
+    },
+    "menstrual_phase": {
+      "type": "string",
+      "enum": [
+        "menstruation",
+        "follicular",
+        "ovulation",
+        "luteal"
+      ],
+      "description": "Current menstrual phase"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "ai_analysis": {
+      "type": "string",
+      "description": "AI-generated analysis of this entry"
+    },
+    "meal_photo_url": {
+      "type": "string",
+      "description": "URL of uploaded meal photo for AI scanning"
+    }
+  },
+  "required": [
+    "type",
+    "date"
+  ]
+}

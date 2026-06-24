@@ -1,0 +1,44 @@
+{
+  "name": "DoctorAppointment",
+  "type": "object",
+  "properties": {
+    "doctor_name": {
+      "type": "string",
+      "description": "Name of the doctor"
+    },
+    "specialty": {
+      "type": "string",
+      "description": "Doctor's specialty"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Appointment date and time"
+    },
+    "location": {
+      "type": "string",
+      "description": "Appointment location"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Appointment notes or questions to ask"
+    },
+    "test_results": {
+      "type": "string",
+      "description": "Any test results from the appointment"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "completed",
+        "cancelled"
+      ],
+      "default": "upcoming"
+    }
+  },
+  "required": [
+    "doctor_name",
+    "date"
+  ]
+}

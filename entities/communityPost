@@ -1,0 +1,59 @@
+{
+  "name": "CommunityPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Post title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Post content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "experience",
+        "tip",
+        "question",
+        "event",
+        "meetup",
+        "support"
+      ],
+      "description": "Post category"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the author"
+    },
+    "likes_count": {
+      "type": "number",
+      "description": "Number of likes",
+      "default": 0
+    },
+    "comments": {
+      "type": "array",
+      "description": "Post comments",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author_name": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "category"
+  ]
+}

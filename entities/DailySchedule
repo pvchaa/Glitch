@@ -1,0 +1,60 @@
+{
+  "name": "DailySchedule",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date for this schedule"
+    },
+    "events": {
+      "type": "array",
+      "description": "Scheduled events for the day",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "meal",
+              "exercise",
+              "medication",
+              "appointment",
+              "work",
+              "test",
+              "other"
+            ]
+          },
+          "health_impact": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ai_prediction": {
+      "type": "string",
+      "description": "AI-generated day prediction"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ],
+      "description": "Overall risk level for the day"
+    }
+  },
+  "required": [
+    "date"
+  ]
+}
